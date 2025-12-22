@@ -1,10 +1,15 @@
-document.querySelectorAll('a').forEach(link => {
+document.querySelectorAll('.sidebar nav a').forEach(link => {
   link.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(link.getAttribute('href'))
-      .scrollIntoView({ behavior: 'smooth' });
+    const targetId = link.getAttribute('href');
+
+    if (targetId.startsWith('#')) {
+      e.preventDefault();
+      document.querySelector(targetId)
+        .scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
+
 
 const eduCards = document.querySelectorAll('.edu-card');
 
@@ -29,19 +34,12 @@ window.addEventListener('scroll', () => {
   let current = "";
 
   sections.forEach(section => {
-    const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.sidebar nav a');
-
-window.addEventListener('scroll', () => {
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 150;
+    const sectionTop = section.offsetTop - 120;
     const sectionHeight = section.offsetHeight;
 
     if (
-      pageYOffset >= sectionTop &&
-      pageYOffset < sectionTop + sectionHeight
+      window.pageYOffset >= sectionTop &&
+      window.pageYOffset < sectionTop + sectionHeight
     ) {
       current = section.getAttribute('id');
     }
@@ -54,7 +52,12 @@ window.addEventListener('scroll', () => {
     }
   });
 });
-  });
+
+const menuBtn = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.sidebar nav');
+
+menuBtn.addEventListener('click', () => {
+  nav.classList.toggle('show');
 });
 
 
