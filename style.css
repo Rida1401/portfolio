@@ -1,93 +1,36 @@
+/* =======================
+   GLOBAL RESET
+======================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
-/* Tablets */
-/* Tablets */
-@media (max-width: 768px) {
-  .cards {
-    flex-direction: row; /* keeps flex row, wraps automatically */
-    justify-content: center;
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .skill-card {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .sidebar {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-  }
-
-  .sidebar nav {
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
-  }
-
-  .sidebar nav a {
-    padding: 8px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .resume-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .contact-link {
-    word-break: break-all;
-  }
-}
-
-
-.container {
-  width: 90%;        /* responsive width */
-  max-width: 1200px; /* prevents it from being too wide on big screens */
-  margin: 0 auto;    /* centers it */
-  padding: 20px;     /* spacing inside */
-}
-
-
-nav {
-    display: flex;
-    flex-direction: column;
-}
-
 
 body {
   display: flex;
-  background: #0e0e0e;
+  background: radial-gradient(circle at top, #161616, #0b0b0b);
   color: #eaeaea;
 }
 
-/* Sidebar */
+/* =======================
+   SIDEBAR
+======================= */
 .sidebar {
   width: 260px;
   height: 100vh;
+  position: fixed;
   background: #141414;
   padding: 30px 20px;
-  position: fixed;
 }
 
 .profile {
   text-align: center;
 }
 
-
 .profile h1 {
-  font-size: 40px;
+  font-size: 34px;
 }
 
 .profile p {
@@ -108,100 +51,84 @@ body {
   transition: 0.3s;
 }
 
-.sidebar nav a:hover {
+.sidebar nav a:hover,
+.sidebar nav a.active {
   background: #f5c16c;
   color: #000;
 }
 
-/* Main content */
+/* =======================
+   MAIN CONTENT
+======================= */
 .content {
   margin-left: 260px;
   padding: 40px;
   width: 100%;
 }
 
+/* =======================
+   SECTIONS
+======================= */
 .section {
-  margin-bottom: 80px;
-  animation: fadeUp 0.8s ease;
+  margin-bottom: 60px;
 }
 
 .section h1 {
-  font-size: 32px;
+  font-size: clamp(24px, 4vw, 34px);
   margin-bottom: 20px;
   color: #f5c16c;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;       /* space between cards */
-  justify-content: center;
+p {
+  line-height: 1.7;
 }
 
-
-
-.card {
-  background: #1d1d1d;
-  padding: 20px;
-  border-radius: 14px;
-  transition: transform 0.3s;
-}
-
-.skill-card {
-  background: #1d1d1d;
-  padding: 22px;
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  border-left: 4px solid #f5c16c;
-  flex: 1 1 250px; /* min width 250px, grow/shrink */
-  box-sizing: border-box;
-}
-
-.skill-card h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
-  color: #f5c16c;
-}
-
-.skill-card p {
-  font-size: 14px;
-  color: #ddd;
-  line-height: 1.6;
-}
-
-.skill-card:hover {
-  transform: translateY(-6px);
-  background: #232323;
-}
-
-
-.card:hover {
-  transform: translateY(-8px);
-}
-
-.project {
-  background: #1b1b1b;
-  padding: 25px;
-  border-radius: 14px;
-  margin-bottom: 20px;
-}
-
-.project span {
-  color: #f5c16c;
-  font-size: 14px;
-}
-
+/* =======================
+   CARDS (SKILLS / PROJECTS)
+======================= */
+.cards,
 .projects-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
 }
 
+.skill-card,
+.project,
+.certi,
+.edu-card {
+  background: rgba(30, 30, 30, 0.85);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: 0.3s;
+}
+
+.skill-card {
+  flex: 1 1 250px;
+  border-left: 4px solid #f5c16c;
+}
+
+.skill-card h3 {
+  color: #f5c16c;
+  margin-bottom: 8px;
+}
+
+.skill-card:hover,
+.project:hover,
+.certi:hover,
+.edu-card:hover {
+  transform: translateY(-6px);
+  background: #232323;
+}
+
+/* =======================
+   PROJECT ANIMATION
+======================= */
 .project-card {
   opacity: 0;
   transform: translateY(25px);
-  transition: all 0.4s ease;
+  transition: 0.4s ease;
 }
 
 .project-card.show {
@@ -209,88 +136,42 @@ body {
   transform: translateY(0);
 }
 
-/* Animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.certi {
-  background: #1b1b1b;
-  padding: 25px;
-  border-radius: 14px;
-  margin-bottom: 20px;
-}
-
-.certi span {
-  color: #f5c16c;
-  font-size: 14px;
-}
-
-
+/* =======================
+   EDUCATION TIMELINE
+======================= */
 .education-timeline {
   position: relative;
-  margin-top: 40px;
   padding-left: 30px;
   border-left: 2px solid #2f2f2f;
 }
 
 .edu-card {
   position: relative;
-  background: #1b1b1b;
-  padding: 20px 25px;
-  border-radius: 14px;
   margin-bottom: 30px;
-  transition: all 0.35s ease;
-}
-
-.edu-card {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.edu-card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.edu-card:hover {
-  transform: translateX(8px);
-  background: #232323;
 }
 
 .edu-card h3 {
   color: #f5c16c;
-  font-size: 18px;
 }
 
 .edu-card .place {
   font-size: 14px;
   color: #aaa;
-  margin: 4px 0;
 }
 
-.edu-card p {
-  font-size: 14px;
-  color: #ddd;
-}
-
-/* Timeline dot */
 .edu-card .dot {
   position: absolute;
   left: -38px;
-  top: 28px;
+  top: 25px;
   width: 12px;
   height: 12px;
   background: #f5c16c;
   border-radius: 50%;
 }
 
+/* =======================
+   CONTACT
+======================= */
 .contact-link {
   color: #f5c16c;
   text-decoration: none;
@@ -300,23 +181,9 @@ body {
   text-decoration: underline;
 }
 
-.certi {
-  background: #1b1b1b;
-  padding: 25px;
-  border-radius: 14px;
-  margin-bottom: 20px;
-}
-
-.certi span {
-  color: #f5c16c;
-  font-size: 14px;
-}
-
-.sidebar nav a.active {
-  background: #f5c16c;
-  color: #000;
-}
-
+/* =======================
+   RESUME BUTTON
+======================= */
 .resume-btn {
   display: inline-block;
   margin-top: 20px;
@@ -326,39 +193,53 @@ body {
   text-decoration: none;
   border-radius: 10px;
   font-weight: 600;
-  transition: transform 0.3s;
 }
 
-.resume-btn:hover {
-  transform: scale(1.05);
-}
-
+/* =======================
+   TABLET
+======================= */
 @media (max-width: 768px) {
-  body {
-    flex-direction: row;
-  }
-
   .sidebar {
     width: 220px;
-    height: 100vh;
-    position: fixed;
-    padding: 20px 10px;
-  }
-
-  .sidebar nav a {
-    padding: 10px;
-    font-size: 14px;
   }
 
   .content {
     margin-left: 220px;
-    padding: 20px;
+    padding: 25px;
   }
 }
 
+/* =======================
+   MOBILE
+======================= */
+@media (max-width: 480px) {
+  body {
+    flex-direction: column;
+  }
 
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
 
+  .sidebar nav a {
+    font-size: 14px;
+    padding: 10px;
+  }
 
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
 
+  .cards {
+    flex-direction: column;
+  }
 
-
+  .resume-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
