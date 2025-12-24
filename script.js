@@ -1,14 +1,15 @@
 document.querySelectorAll('.sidebar nav a').forEach(link => {
   link.addEventListener('click', e => {
-    const targetId = link.getAttribute('href');
+    const target = link.getAttribute('href');
 
-    if (targetId.startsWith('#')) {
+    if (target.startsWith('#')) {
       e.preventDefault();
-      document.querySelector(targetId)
+      document.querySelector(target)
         .scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
+
 
 
 const eduCards = document.querySelectorAll('.edu-card');
