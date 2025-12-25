@@ -3,6 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rida Najeeb | Computer Science Graduate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -10,8 +11,14 @@
   <aside class="sidebar">
   <div class="profile">
     <h1>Rida Najeeb</h1>
-    <p>Computer Science Graduate</p>
+    <p>Cloud & AI Engineer | AWS | Full-Stack</p>
   </div>
+
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
   <nav>
     <a href="#about">About</a>
@@ -31,10 +38,9 @@
     <section id="about" class="section container">
       <h1>About Me</h1>
       <p>
-        Enthusiastic and disciplined Computer Science Engineering graduate (2023) with a passion for 
-problem-solving, automation, and cloud technologies. Skilled in full-stack fundamentals, databases, 
-and analytical reasoning with hands-on experience in developing smart, scalable solutions. Eager to 
-contribute to technology-driven roles that involve learning, innovation, and collaboration.
+        I am a disciplined Computer Science Engineering graduate from Vasavi College of Engineering (Class of 2023) with hands-on experience in building secure, scalable cloud-based and AI-powered applications.
+        <br><br>
+        I enjoy designing systems that combine cloud infrastructure, full-stack development, and intelligent automation to solve real-world problems with a focus on security, reliability, and performance.
       </p>
       <a href="resume.pdf" download class="resume-btn">Download Resume</a>
 
@@ -48,22 +54,22 @@ contribute to technology-driven roles that involve learning, innovation, and col
 
     <div class="skill-card">
       <h3>Programming Languages</h3>
-      <p>Java, Python, C</p>
+      <p>Java, Python, JavaScript</p>
     </div>
 
     <div class="skill-card">
       <h3>Web Technologies</h3>
-      <p>HTML5, CSS3, JavaScript, React (Basic)</p>
+      <p>HTML5, CSS3, React, Node.js</p>
     </div>
 
     <div class="skill-card">
       <h3>Databases</h3>
-      <p>MySQL, MongoDB (Introductory)</p>
+      <p>MySQL, SQLite</p>
     </div>
 
     <div class="skill-card">
-      <h3>Cloud Technologies</h3>
-      <p>AWS (EC2, S3, IAM, CloudWatch Basics)</p>
+      <h3>Cloud & Tools</h3>
+      <p>AWS (EC2, S3, IAM, CloudWatch), AWS SDK</p>
     </div>
 
     <div class="skill-card">
@@ -93,22 +99,47 @@ contribute to technology-driven roles that involve learning, innovation, and col
     <section id="projects" class="section container">
       <h1>Projects</h1>
 
+      <div class="cards">
       <div class="project project-card">
-  <h3>Cloud-Based File Storage System</h3>
-  <p>Developed a secure cloud platform allowing users to upload, access, and manage files remotely. 
-Implemented authentication, encryption, and structured file storage on AWS S3. <br>
-Impact: Improved data accessibility and reliability. </p>
-  <span>AWS | Python (Flask) | MySQL | HTML/CSS</span>
+  <h3>📂 NebulaVault – Secure Cloud Storage</h3>
+  <p>Secure cloud storage with Flask & AWS S3. Features AES-256 encryption, IAM access control, and structured file management. Deployed on EC2 with MySQL metadata handling.</p>
+  <div class="tech-stack">
+    <span>AWS (EC2, S3, IAM)</span>
+    <span>Python (Flask)</span>
+    <span>MySQL</span>
+  </div>
 </div>
-<br>
 <div class="project project-card">
-  <h3>AI Attendance Tracker</h3>
-  <p>Created an AI-based attendance system using facial recognition to automate student attendance marking 
-with high accuracy.<br> 
-Impact: Reduced manual effort by 80% and 
-improved record accuracy.</p>
-  <span>Python | OpenCV | TensorFlow</span>
+  <h3>👁️ VisionMark AI – Attendance System</h3>
+  <p>Real-time attendance system using OpenCV & TensorFlow. Automates logging via facial recognition, reducing manual effort by ~80%.</p>
+  <div class="tech-stack">
+    <span>Python</span>
+    <span>OpenCV</span>
+    <span>TensorFlow</span>
+    <span>SQLite</span>
+  </div>
 </div>
+<div class="project project-card">
+  <h3>📊 SentinelSaaS – Cloud Dashboard</h3>
+  <p>Cloud health dashboard visualizing AWS infrastructure. Integrates CloudWatch APIs for EC2 & S3 metrics with a responsive React frontend.</p>
+  <div class="tech-stack">
+    <span>React</span>
+    <span>Node.js</span>
+    <span>AWS SDK</span>
+    <span>CloudWatch</span>
+  </div>
+</div>
+<div class="project project-card">
+  <h3>🌐 Personal Portfolio Website</h3>
+  <p>Responsive portfolio with clean React UI. High-availability deployment via AWS S3 & CloudFront.</p>
+  <div class="tech-stack">
+    <span>React</span>
+    <span>HTML/CSS</span>
+    <span>AWS S3</span>
+    <span>CloudFront</span>
+  </div>
+</div>
+      </div>
 
     </section>
 
