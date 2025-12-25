@@ -12,7 +12,7 @@ document.querySelectorAll('.sidebar nav a').forEach(link => {
 
 
 
-const eduCards = document.querySelectorAll('.edu-card');
+const allCards = document.querySelectorAll('.edu-card, .project-card, .skill-card, .certi-card');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -22,11 +22,7 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.2 });
 
-eduCards.forEach(card => observer.observe(card));
-
-const projectCards = document.querySelectorAll('.project-card');
-
-projectCards.forEach(card => observer.observe(card));
+allCards.forEach(card => observer.observe(card));
 
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.sidebar nav a');
@@ -57,8 +53,8 @@ window.addEventListener('scroll', () => {
 const menuBtn = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.sidebar nav');
 
-menuBtn.addEventListener('click', () => {
-  nav.classList.toggle('show');
-});
-
-
+if (menuBtn) {
+  menuBtn.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
+}
