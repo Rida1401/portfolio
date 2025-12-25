@@ -5,13 +5,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
   display: flex;
-  background: radial-gradient(circle at top, #161616, #0b0b0b);
-  color: #eaeaea;
+  /* Subtle grid pattern overlay + Gradient */
+  background: 
+    linear-gradient(rgba(229, 152, 155, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229, 152, 155, 0.15) 1px, transparent 1px),
+    linear-gradient(135deg, #fff8f0 0%, #ffe5d9 100%);
+  background-size: 40px 40px, 40px 40px, 100% 100%;
+  background-attachment: fixed;
+  color: #4a4a4a;      /* Dark Gray Text */
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
 }
 
 /* =======================
@@ -21,7 +31,11 @@ body {
   width: 260px;
   height: 100vh;
   position: fixed;
-  background: #141414;
+  background: rgba(255, 241, 230, 0.7); /* Semi-transparent Linen */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 2px 0 15px rgba(0,0,0,0.05);
   padding: 30px 20px;
 }
 
@@ -35,7 +49,7 @@ body {
 
 .profile p {
   font-size: 14px;
-  color: #aaa;
+  color: #777;
 }
 
 .sidebar nav {
@@ -45,7 +59,7 @@ body {
 .sidebar nav a {
   display: block;
   padding: 12px;
-  color: #ccc;
+  color: #666;
   text-decoration: none;
   border-radius: 8px;
   transition: 0.3s;
@@ -53,8 +67,8 @@ body {
 
 .sidebar nav a:hover,
 .sidebar nav a.active {
-  background: #f5c16c;
-  color: #000;
+  background: #ffcdb2; /* Soft Peach Accent */
+  color: #5d4037;      /* Dark Brown Text */
 }
 
 /* =======================
@@ -76,7 +90,7 @@ body {
 .section h1 {
   font-size: clamp(24px, 4vw, 34px);
   margin-bottom: 20px;
-  color: #f5c16c;
+  color: #e07a5f; /* Terra Cotta */
 }
 
 p {
@@ -97,20 +111,21 @@ p {
 .project,
 .certi,
 .edu-card {
-  background: rgba(30, 30, 30, 0.85);
+  background: #ffffff; /* White Card Background */
   padding: 20px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid #ffe5d9; /* Soft Peach Border */
+  box-shadow: 0 10px 30px -10px rgba(229, 152, 155, 0.2); /* Premium Warm Shadow */
   transition: 0.3s;
 }
 
 .skill-card {
   flex: 1 1 250px;
-  border-left: 4px solid #f5c16c;
+  border-left: 4px solid #e07a5f;
 }
 
 .skill-card h3 {
-  color: #f5c16c;
+  color: #e07a5f;
   margin-bottom: 8px;
 }
 
@@ -119,9 +134,49 @@ p {
 .certi:hover,
 .edu-card:hover {
   transform: translateY(-6px);
-  background: #232323;
+  background: #ffffff;
+  box-shadow: 0 10px 20px rgba(224, 122, 95, 0.15); /* Peach Glow Shadow */
 }
 
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.tech-stack span {
+  background: #fff0f5;
+  color: #d35400;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #ffdab9;
+}
+
+/* =======================
+   MENU TOGGLE
+======================= */
+.menu-toggle {
+  display: none; /* Hidden on desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  top: 40px; /* Adjusted for alignment */
+  right: 20px;
+  z-index: 1001;
+}
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #5d4037;
+  margin: 5px 0;
+  transition: 0.3s;
+}
 /* =======================
    PROJECT ANIMATION
 ======================= */
@@ -142,7 +197,7 @@ p {
 .education-timeline {
   position: relative;
   padding-left: 30px;
-  border-left: 2px solid #2f2f2f;
+  border-left: 2px solid #e0e0e0;
 }
 
 .edu-card {
@@ -151,12 +206,12 @@ p {
 }
 
 .edu-card h3 {
-  color: #f5c16c;
+  color: #e07a5f;
 }
 
 .edu-card .place {
   font-size: 14px;
-  color: #aaa;
+  color: #888;
 }
 
 .edu-card .dot {
@@ -165,7 +220,7 @@ p {
   top: 25px;
   width: 12px;
   height: 12px;
-  background: #f5c16c;
+  background: #e07a5f;
   border-radius: 50%;
 }
 
@@ -173,7 +228,7 @@ p {
    CONTACT
 ======================= */
 .contact-link {
-  color: #f5c16c;
+  color: #e07a5f;
   text-decoration: none;
 }
 
@@ -188,8 +243,8 @@ p {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 20px;
-  background: #f5c16c;
-  color: #000;
+  background: linear-gradient(to right, #ffcdb2, #e5989b);
+  color: #fff;
   text-decoration: none;
   border-radius: 10px;
   font-weight: 600;
@@ -199,20 +254,6 @@ p {
    TABLET
 ======================= */
 @media (max-width: 768px) {
-  .sidebar {
-    width: 220px;
-  }
-
-  .content {
-    margin-left: 220px;
-    padding: 25px;
-  }
-}
-
-/* =======================
-   MOBILE
-======================= */
-@media (max-width: 480px) {
   body {
     flex-direction: column;
   }
@@ -221,21 +262,46 @@ p {
     position: relative;
     width: 100%;
     height: auto;
-    text-align: center;
   }
 
-  .sidebar nav a {
-    font-size: 14px;
-    padding: 10px;
+  .menu-toggle {
+    display: block; /* Show hamburger */
+  }
+
+  .sidebar nav {
+    display: none; /* Hide nav by default */
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .sidebar nav.show {
+    display: block; /* Show nav when toggled */
+    text-align: center;
   }
 
   .content {
     margin-left: 0;
-    padding: 20px;
+    padding: 25px;
   }
 
   .cards {
     flex-direction: column;
+  }
+
+  /* Make skills cards smaller and side-by-side on mobile */
+  #skills .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .skill-card {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .skill-card h3 {
+    font-size: 16px;
   }
 
   .resume-btn {
