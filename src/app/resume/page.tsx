@@ -27,7 +27,7 @@ export default function Resume() {
 
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+  const basePath = "";
   const PDF_URL = `${basePath}/docs/Rida-Najeeb-Resume.pdf`;
 
   useEffect(() => {

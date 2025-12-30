@@ -17,7 +17,7 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
   const pathname = usePathname();
-  const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+  const basePath = "";
   const resumeUrl = `${basePath}/docs/Rida-Najeeb-Resume.pdf`;
   const isResumePage = pathname === "/resume";
 

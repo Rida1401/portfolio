@@ -28,7 +28,7 @@ export default function ResumeLayout({
   children: React.ReactNode;
 }) {
   const resumeStructuredData = generateResumeStructuredData();
-  const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+  const basePath = "";
 
   return (
     <>
